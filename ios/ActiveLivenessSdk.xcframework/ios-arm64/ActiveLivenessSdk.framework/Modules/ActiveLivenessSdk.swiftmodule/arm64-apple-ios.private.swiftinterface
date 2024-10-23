@@ -1,0 +1,177 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name ActiveLivenessSdk
+import AVFoundation
+@_exported import ActiveLivenessSdk
+import Combine
+import CommonCrypto
+import CoreGraphics
+import DeveloperToolsSupport
+import Foundation
+import ImageIO
+import Network
+import Security
+import Swift
+import SwiftUI
+import SystemConfiguration
+import UIKit
+import Vision
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+#if compiler(>=5.3) && $AsyncAwait
+public func approval(_ path: Swift.String = "/api/v2/liveness/app", siteToken: Swift.String, tranUuid: Swift.String, realImage: CoreGraphics.CGImage, modeTypes: Swift.String) async throws -> Swift.String
+#endif
+#if compiler(>=5.3) && $AsyncAwait
+public func token(_ path: Swift.String = "/common/token") async throws -> Swift.String
+#endif
+public enum ActionOrder : Swift.Int {
+  case rectangles
+  case face, frontal
+  case raise, bending
+  case turn_right, turn_left
+  case tilt_right, tilt_left
+  case open_mouth, smile
+  case closed_eye
+  public static func setCustomImageName(_ imageName: Swift.String, for order: ActiveLivenessSdk.ActionOrder)
+  public static func setCustomDescription(_ description: Swift.String, for order: ActiveLivenessSdk.ActionOrder)
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public func Log<T>(_ object: T?, filename: Swift.String = #file, line: Swift.Int = #line, funcName: Swift.String = #function)
+extension Foundation.Bundle {
+  public var displayName: Swift.String? {
+    get
+  }
+}
+public func FilePathDoc(fileName: Swift.String) -> Foundation.URL?
+public func saveImageInDoc(image: UIKit.UIImage, fileName: Swift.String) -> Foundation.URL?
+public func loadImageFromDoc(fileName: Swift.String) -> UIKit.UIImage?
+public func saveDataInDoc(data: Foundation.Data, fileName: Swift.String) -> Foundation.URL?
+extension Foundation.Date {
+  public func TimeStampToDate(timestamp: Swift.UInt64) -> Foundation.Date
+}
+@_Concurrency.MainActor(unsafe) public struct PageView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(_ page: Swift.Int = 0)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17ActiveLivenessSdk8PageViewV4bodyQrvp", 0) __
+}
+
+
+
+#if compiler(>=5.3) && $AsyncAwait
+public func app(_ path: Swift.String = "/aliveness/app", siteToken: Swift.String, deviceType: Swift.String, userKey: Swift.String, userNm: Swift.String, userReqNum: Swift.String, siteRequestId: Swift.Int32) async throws -> Swift.String
+#endif
+public enum StateCode : Swift.Error, Swift.Equatable, Swift.Hashable {
+  public var name: Swift.String {
+    get
+  }
+  public var caseName: Swift.String {
+    get
+  }
+  case VM_001
+  case VM_002
+  case TE_002(message: Swift.String?)
+  case HT_ERR(statusCode: Swift.Int, message: Swift.String?)
+  case VC_101
+  case VC_103
+  case VC_FAL
+  case VC_SUC
+  case UN_ERR(message: Swift.String?)
+  case NONE(_: Swift.String? = nil)
+  case OPEN(_: Swift.String? = nil)
+  case DONE(_: Swift.String? = nil)
+  public static func == (a: ActiveLivenessSdk.StateCode, b: ActiveLivenessSdk.StateCode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ActiveLivenessSdk.StateCode : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public typealias SDKResult = (stateCode: ActiveLivenessSdk.StateCode, fullImage: CoreGraphics.CGImage?, cropImage: CoreGraphics.CGImage?)
+@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+public func callSDK(webUrl: Swift.String, userKey: Swift.String, userNm: Swift.String, userReqNum: Swift.String, siteRequestId: Swift.Int32, completion: @escaping (ActiveLivenessSdk.SDKResult) -> Swift.Void)
+public func setPageColor(_ newColor: SwiftUI.Color)
+public func setLogoImage(_ newImage: SwiftUI.Image)
+public func setLivenessPassCount(_ step: ActiveLivenessSdk.StepCount = .THREE)
+public enum StepCount : Swift.Int, Swift.Equatable {
+  case TWO
+  case THREE
+  case FOUR
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 13, *)
+public enum LicenseErrorCode : Swift.Error, Swift.Equatable, Foundation.LocalizedError {
+  case unAuthorizedLicense
+  case decryptFailed
+  case unknownToken
+  case unknownAPIKey
+  case timeStampError
+  case expireDate
+  case unknownError
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: ActiveLivenessSdk.LicenseErrorCode, b: ActiveLivenessSdk.LicenseErrorCode) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class R {
+  public static func bundlePath(ResourceName: Swift.String, type: Swift.String? = nil) -> Swift.String?
+  public static func bundleData(fullFileName: Swift.String, type: Swift.String? = nil) -> Foundation.Data?
+  @objc deinit
+}
+extension SwiftUI.Image {
+  public static func loadBundle(name: Swift.String) -> SwiftUI.Image
+}
+extension UIKit.UIImage {
+  public static func loadBundle(name: Swift.String) -> UIKit.UIImage?
+}
+extension ActiveLivenessSdk.R {
+  public enum Image {
+  }
+  public enum Color {
+  }
+}
+extension ActiveLivenessSdk.R.Image {
+  public static var camera: UIKit.UIImage {
+    get
+  }
+  public static var logo: SwiftUI.Image {
+    get
+  }
+}
+extension ActiveLivenessSdk.R.Color {
+  public static let pageColor: SwiftUI.Color
+  public static let foreColor: SwiftUI.Color
+  public static let backColor: SwiftUI.Color
+  public static let enableColor: SwiftUI.Color
+  public static let disableColor: SwiftUI.Color
+  public static let cubox_basic: SwiftUI.Color
+  public static let cubox_light: SwiftUI.Color
+  public static var sampleRed: UIKit.UIColor {
+    get
+  }
+}
+extension ActiveLivenessSdk.ActionOrder : Swift.Equatable {}
+extension ActiveLivenessSdk.ActionOrder : Swift.Hashable {}
+extension ActiveLivenessSdk.ActionOrder : Swift.RawRepresentable {}
+extension ActiveLivenessSdk.StepCount : Swift.Hashable {}
+extension ActiveLivenessSdk.StepCount : Swift.RawRepresentable {}
+@available(iOS 13, *)
+extension ActiveLivenessSdk.LicenseErrorCode : Swift.Hashable {}

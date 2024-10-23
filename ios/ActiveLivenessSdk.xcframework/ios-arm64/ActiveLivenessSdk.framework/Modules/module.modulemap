@@ -1,0 +1,6 @@
+framework module ActiveLivenessSdk {
+  umbrella header "ActiveLivenessSdk.h"
+  export *
+
+  module * { export * }
+}

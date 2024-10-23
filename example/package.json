@@ -22,8 +22,8 @@
     "@react-native/metro-config": "0.75.4",
     "@react-native/typescript-config": "0.75.4",
     "@rnx-kit/metro-config": "^2.0.0",
-    "react-native-test-app": "^3.10.15",
-    "babel-plugin-module-resolver": "^5.0.0"
+    "babel-plugin-module-resolver": "^5.0.0",
+    "react-native-test-app": "^3.10.15"
   },
   "engines": {
     "node": ">=18"

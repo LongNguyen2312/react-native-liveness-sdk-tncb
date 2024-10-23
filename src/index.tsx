@@ -6,8 +6,8 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-const LivenessSdkTncb = NativeModules.LivenessSdkTncb
-  ? NativeModules.LivenessSdkTncb
+const LivenessSdkTncb = NativeModules?.LivenessSdkTncbModule
+  ? NativeModules?.LivenessSdkTncbModule
   : new Proxy(
       {},
       {
@@ -17,6 +17,48 @@ const LivenessSdkTncb = NativeModules.LivenessSdkTncb
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return LivenessSdkTncb.multiply(a, b);
+interface IPropInit {
+  webUrl: string;
+  userKey: string;
+  userNm: string;
+}
+
+// ONLY ANDROID
+export const initSDK = (config: IPropInit) => {
+  LivenessSdkTncb?.initSdk(config)
+}
+
+interface IPropConfigAndroid {
+  rounds: number;
+  userReqNum: string;
+  siteRequestId: number;
+}
+
+interface IPropDescription {
+  frontal: string;
+  raise: string;
+  bending: string;
+  turn_right: string;
+  turn_left: string;
+  tilt_right: string;
+  tilt_left: string;
+  open_mouth: string;
+  smile: string;
+}
+
+// START LIVENESS ANDROID 
+export const startLiveness = (configAndroid: IPropConfigAndroid, des: IPropDescription) => {
+  return new Promise((resolve, reject) => {
+    LivenessSdkTncb?.startLiveness(
+      configAndroid,
+      des,
+      (res: any) => {
+        resolve(res)
+      },
+      (err: any) => {
+        reject(err?.stateCode || 'Failed to Liveness')
+      },
+    )
+  });
+  
 }
