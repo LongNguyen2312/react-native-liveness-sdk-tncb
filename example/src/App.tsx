@@ -1,22 +1,31 @@
 //import liraries
 import React from 'react';
-import { View, Text, StyleSheet, Button, Image } from 'react-native';
+import { View, Text, StyleSheet, Button, Image, Platform } from 'react-native';
 import { initSDK, startLiveness } from 'react-native-liveness-sdk-tncb';
 
 // create a component
 const VerificationScreen = () => {
   React.useEffect(() => {
-    initSDK({
-      webUrl: '',
-      userKey: '',
-      userNm: '',
-    });
+    Platform.OS === 'android' &&
+      initSDK({
+        webUrl: '',
+        userKey: '',
+        userNm: '',
+      });
   }, []);
 
   const onPressReady = async () => {
     const configAndroid = {
+      rounds: 2,
+      userReqNum: '',
+      siteRequestId: 0,
+    };
+    const configIos = {
+      webUrl: '',
       rounds: 3,
-      userReqNum: 'Test',
+      userKey: '',
+      userNm: '',
+      userReqNum: '',
       siteRequestId: 0,
     };
     const customDescription = {
@@ -31,7 +40,10 @@ const VerificationScreen = () => {
       smile: 'Hãy mỉm cười',
     };
     try {
-      const res = await startLiveness(configAndroid, customDescription);
+      const res = await startLiveness(
+        Platform.OS === 'android' ? configAndroid : configIos,
+        customDescription
+      );
       console.log('result', res);
     } catch (error) {
       console.log('error', error);

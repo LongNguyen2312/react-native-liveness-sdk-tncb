@@ -17,19 +17,18 @@ const LivenessSdkTncb = NativeModules?.LivenessSdkTncbModule
       }
     );
 
+const isIOS = Platform.OS === 'ios';
+
 interface IPropInit {
   webUrl: string;
   userKey: string;
   userNm: string;
 }
-
-// ONLY ANDROID
-export const initSDK = (config: IPropInit) => {
-  LivenessSdkTncb?.initSdk(config)
-}
-
-interface IPropConfigAndroid {
+interface IPropsConfig {
+  webUrl?: string;
   rounds: number;
+  userKey?: string;
+  userNm?: string;
   userReqNum: string;
   siteRequestId: number;
 }
@@ -46,19 +45,62 @@ interface IPropDescription {
   smile: string;
 }
 
-// START LIVENESS ANDROID 
-export const startLiveness = (configAndroid: IPropConfigAndroid, des: IPropDescription) => {
+// ONLY ANDROID
+export const initSDK = (config: IPropInit) => {
+  LivenessSdkTncb?.initSdk(config);
+};
+
+// START LIVENESS ANDROID
+const startLivenessAndroid = (
+  configAndroid: IPropsConfig,
+  des: IPropDescription
+) => {
   return new Promise((resolve, reject) => {
     LivenessSdkTncb?.startLiveness(
       configAndroid,
       des,
       (res: any) => {
-        resolve(res)
+        resolve(onHandleResult(res));
       },
       (err: any) => {
-        reject(err?.stateCode || 'Failed to Liveness')
-      },
-    )
+        reject(err?.stateCode || 'Failed to Liveness');
+      }
+    );
   });
-  
-}
+};
+
+// START LIVENESS IOS
+const startLivenessIos = (configIos: IPropsConfig, des: IPropDescription) => {
+  return new Promise((resolve, reject) => {
+    LivenessSdkTncb?.startLiveness(configIos, des)
+      .then((res: any) => {
+        resolve(onHandleResult(res));
+      })
+      .catch((error: any) => {
+        reject(error?.stateCode || 'Failed to Liveness');
+      });
+  });
+};
+
+export const startLiveness = (config: IPropsConfig, des: IPropDescription) => {
+  return isIOS
+    ? startLivenessIos(config, des)
+    : startLivenessAndroid(config, des);
+};
+
+const onHandleResult = (data: any) => {
+  if (data?.stateCode !== 'VC_SUC') return data?.stateCode;
+  if (data?.authImage) {
+    const temp = data?.authImage?.split('/');
+    const arrTemp = temp?.[temp?.length - 1]?.split('.');
+    const extension = arrTemp[1] || '';
+    const fileName = arrTemp[0] || '';
+    const dataUpload = {
+      uri: `${isIOS ? '' : 'file://'}${data?.authImage}`,
+      type: (isIOS ? extension : `image/${extension}`) || '',
+      name: `${fileName}.${extension}` || '',
+    };
+    return dataUpload;
+  }
+  return null;
+};

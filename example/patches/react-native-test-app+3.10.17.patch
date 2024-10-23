@@ -1,0 +1,18 @@
+diff --git a/node_modules/react-native-test-app/ios/test_app.rb b/node_modules/react-native-test-app/ios/test_app.rb
+index 46bac60..a87b0b0 100644
+--- a/node_modules/react-native-test-app/ios/test_app.rb
++++ b/node_modules/react-native-test-app/ios/test_app.rb
+@@ -315,12 +315,7 @@ def make_project!(xcodeproj, project_root, target_platform, options)
+   config = app_project.build_configurations[0]
+ 
+   # TODO: Deployment targets are bumped in 4.0. We should remove these blocks then.
+-  ios_deployment_target =
+-    if rn_version >= v(0, 76, 0)
+-      '15.1'
+-    else
+-      config.resolve_build_setting(IPHONEOS_DEPLOYMENT_TARGET)
+-    end
++  ios_deployment_target = '15.0'
+   macos_deployment_target =
+     if rn_version >= v(0, 75, 0)
+       '11.0'
