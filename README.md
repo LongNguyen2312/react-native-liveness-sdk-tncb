@@ -5,7 +5,7 @@ eKYC solution provided by TNCB
 ## Installation
 
 ```sh
-npm install react-native-liveness-sdk-tncb
+yarn add LongNguyen2312/react-native-liveness-sdk-tncb
 ```
 
 ## Linking
