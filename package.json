@@ -2,15 +2,15 @@
   "name": "react-native-liveness-sdk-tncb",
   "version": "0.1.0",
   "description": "eKYC solution provided by TNCB",
-  "source": "./src/index.tsx",
-  "main": "./lib/commonjs/index.cjs",
-  "module": "./lib/module/index.mjs",
-  "types": "./lib/typescript/src/index.d.ts",
+  "source": "./src/index.ts",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./types/react-native-liveness-sdk-tncb.d.ts",
   "exports": {
     ".": {
-      "types": "./lib/typescript/src/index.d.ts",
-      "import": "./lib/module/index.mjs",
-      "require": "./lib/commonjs/index.cjs"
+      "types": "./types/react-native-liveness-sdk-tncb.d.ts",
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
     }
   },
   "files": [
