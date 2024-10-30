@@ -1,4 +1,4 @@
-declare module 'react-native-nfc-passport-info' {
+declare module 'react-native-liveness-sdk-tncb' {
   // ONLY ANDROID
   export function initSDK(config: {
     webUrl: string;
