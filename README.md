@@ -43,10 +43,10 @@ Add to `app/build.gradle`
 Add to `MainApplication`
 
 ```
-  import com.livenesssdktncb.LivenessSdkTncbPackage;
+import com.livenesssdktncb.LivenessSdkTncbPackage;
 
-  List<ReactPackage> packages = new PackageList(this).getPackages();
-  packages.add(new LivenessSdkTncbPackage());
+List<ReactPackage> packages = new PackageList(this).getPackages();
+packages.add(new LivenessSdkTncbPackage());
 ```
 
 ## Configuration
@@ -67,6 +67,20 @@ in Xcode, add `NFCReaderUsageDescription` into your `info.plist`, for example:
 ```
 <uses-permission android:name="android.permission.CAMERA" />
 ```
+
+NOTE: BUILD RELEASE MODE (APK, AAB)
+
+when you build release your app occur error: `Error building Android library: Direct local .aar file dependencies are not supported`:
+
+add to `app/build.gradle`:
+
+```
+lintOptions {
+    checkReleaseBuilds false
+}
+```
+
+or you can reference and follow: `https://stackoverflow.com/questions/60878599/error-building-android-library-direct-local-aar-file-dependencies-are-not-supp`
 
 ## Usage
 
