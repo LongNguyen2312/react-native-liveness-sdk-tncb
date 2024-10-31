@@ -14,6 +14,41 @@ yarn add LongNguyen2312/react-native-liveness-sdk-tncb
 
 The library has autolink support
 
+### Manual link
+
+#### IOS
+
+Add to `Podfile`
+
+```
+    rn_liveness_path = '../node_modules/react-native-liveness-sdk-tncb'
+    pod 'react-native-liveness-sdk-tncb', :path => rn_liveness_path
+```
+
+#### Android
+
+Add to `setting.gradle`
+
+```
+  include ':react-native-liveness-sdk-tncb'
+  project(':react-native-liveness-sdk-tncb').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-liveness-sdk-tncb/android')
+```
+
+Add to `app/build.gradle`
+
+```
+  implementation project(':react-native-liveness-sdk-tncb')
+```
+
+Add to `MainApplication`
+
+```
+  import com.livenesssdktncb.LivenessSdkTncbPackage;
+
+  List<ReactPackage> packages = new PackageList(this).getPackages();
+  packages.add(new LivenessSdkTncbPackage());
+```
+
 ## Configuration
 
 ### IOS
