@@ -1,6 +1,6 @@
 {
   "name": "react-native-liveness-sdk-tncb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "eKYC solution provided by TNCB",
   "source": "./src/index.ts",
   "main": "./src/index.ts",
