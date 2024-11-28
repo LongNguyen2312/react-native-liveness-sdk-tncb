@@ -1209,7 +1209,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-liveness-sdk-tncb (0.1.0):
+  - react-native-liveness-sdk-tncb (0.1.2):
     - DoubleConversion
     - glog
     - RCT-Folly (= 2024.01.01.00)
@@ -1739,7 +1739,7 @@ SPEC CHECKSUMS:
   React-logger: d79b704bf215af194f5213a6b7deec50ba8e6a9b
   React-Mapbuffer: b982d5bba94a8bc073bda48f0d27c9b28417fae3
   React-microtasksnativemodule: 475ea38712131abd7f7935c82a41364cea2fa01f
-  react-native-liveness-sdk-tncb: 8cd5c252b7c57651872842e353e571a81af9691b
+  react-native-liveness-sdk-tncb: 98785204bdacbca302ffd944881373f5a8932191
   React-nativeconfig: 8c83d992b9cc7d75b5abe262069eaeea4349f794
   React-NativeModulesApple: b8465afc883f5bf3fe8bac3767e394d581a5f123
   React-perflogger: 59e1a3182dca2cee7b9f1f7aab204018d46d1914

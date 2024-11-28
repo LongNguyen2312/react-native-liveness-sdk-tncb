@@ -1,7 +1,7 @@
 import Foundation
 import React
 import Combine
-import ActiveLivenessSdk
+import  ActiveLivenessSdk
 import SwiftUI
 
 @objc(LivenessSdkTncbModule)
