@@ -25,6 +25,20 @@ public func approval(_ path: Swift.String = "/api/v2/liveness/app", siteToken: S
 #if compiler(>=5.3) && $AsyncAwait
 public func token(_ path: Swift.String = "/common/token") async throws -> Swift.String
 #endif
+public enum SDKLanguage : Swift.String {
+  case KOREA
+  case ENGLISH
+  case LAOS
+  case VIETNAM
+  public var orderMessage: [ActiveLivenessSdk.ActionOrder : Swift.String] {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public enum ActionOrder : Swift.Int {
   case rectangles
   case face, frontal
@@ -35,6 +49,7 @@ public enum ActionOrder : Swift.Int {
   case closed_eye
   public static func setCustomImageName(_ imageName: Swift.String, for order: ActiveLivenessSdk.ActionOrder)
   public static func setCustomDescription(_ description: Swift.String, for order: ActiveLivenessSdk.ActionOrder)
+  public static func setLanguage(language: ActiveLivenessSdk.SDKLanguage)
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -99,7 +114,7 @@ extension ActiveLivenessSdk.StateCode : Foundation.LocalizedError {
 }
 public typealias SDKResult = (stateCode: ActiveLivenessSdk.StateCode, fullImage: CoreGraphics.CGImage?, cropImage: CoreGraphics.CGImage?)
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
-public func callSDK(webUrl: Swift.String, userKey: Swift.String, userNm: Swift.String, userReqNum: Swift.String, siteRequestId: Swift.Int32, completion: @escaping (ActiveLivenessSdk.SDKResult) -> Swift.Void)
+public func callSDK(webUrl: Swift.String, licenseKey: Swift.String = "", userKey: Swift.String, userNm: Swift.String, userReqNum: Swift.String, siteRequestId: Swift.Int32, completion: @escaping (ActiveLivenessSdk.SDKResult) -> Swift.Void)
 public func setPageColor(_ newColor: SwiftUI.Color)
 public func setLogoImage(_ newImage: SwiftUI.Image)
 public enum StepCount : Swift.Int, Swift.Equatable {
@@ -168,6 +183,9 @@ extension ActiveLivenessSdk.R.Color {
     get
   }
 }
+extension ActiveLivenessSdk.SDKLanguage : Swift.Equatable {}
+extension ActiveLivenessSdk.SDKLanguage : Swift.Hashable {}
+extension ActiveLivenessSdk.SDKLanguage : Swift.RawRepresentable {}
 extension ActiveLivenessSdk.ActionOrder : Swift.Equatable {}
 extension ActiveLivenessSdk.ActionOrder : Swift.Hashable {}
 extension ActiveLivenessSdk.ActionOrder : Swift.RawRepresentable {}

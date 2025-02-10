@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		LRhLTiUBe2MGotpMZygCbf4d0mw=
+		6h/QiQ8jT/oLtxmNNH0rYYEebmM=
 		</data>
 		<key>Headers/ActiveLivenessSdk.h</key>
 		<data>
@@ -14,19 +14,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		wYTqyXXojNUQHpjckC5RH/yUmUo=
+		rbhPFGbf9/zIyzEG6/Y52kKAm5c=
 		</data>
 		<key>Modules/ActiveLivenessSdk.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		bJqHFkVQ7MXhxFL0nEpetzVXw9Q=
+		hFyrdhzy96dh/o4SlJX2XMjZgnk=
 		</data>
 		<key>Modules/ActiveLivenessSdk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		n+m6Lt0RoQD1WLvyyeG55dCee5k=
+		yZAmQg9mi2fek9pIQAZRvmX/tck=
 		</data>
 		<key>Modules/ActiveLivenessSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		1OKPbNGIzF3Uvzr1Ckfw08NH3Qc=
+		oofaJuC5tkL5reYk+KpAncL7JXY=
 		</data>
 		<key>Modules/ActiveLivenessSdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/ActiveLivenessSdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		1OKPbNGIzF3Uvzr1Ckfw08NH3Qc=
+		oofaJuC5tkL5reYk+KpAncL7JXY=
 		</data>
 		<key>Modules/ActiveLivenessSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		fp6WlVMoZH9cVHnRLlFwWeEDQ04=
+		9sAEFHA9RdoNHIS9Y8VadRWUAAE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -87,7 +87,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8CIO4ypnEXUDKP3tzOHQe212Z8SEY7fqpvYy3ZZrKf4=
+			59sthOTEVmmpPnkaF8yLV8Ivo32Zh2Z0ZEcDSEgjkAs=
 			</data>
 		</dict>
 		<key>Headers/ActiveLivenessSdk.h</key>
@@ -101,21 +101,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JNpYuGguQ9otPlR3AYrOk3wO1SSb65LSO/YwVd2cqjE=
+			tlE+e9x5M3j5gl1IX1Rfhuq4D80yj6YwbLjwMqd8lTg=
 			</data>
 		</dict>
 		<key>Modules/ActiveLivenessSdk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SkdZo4Chl/58iY1nTtp0am85qT99xpENKFQQpIQPQNw=
+			PO1h7HFPU8uX2sR772n5qj2qJcvAh/e4Ivk9H1VYaik=
 			</data>
 		</dict>
 		<key>Modules/ActiveLivenessSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LFfRK7PtSq1d+aFrTPz2AveHgYVLAuWfo0lulAPlpp8=
+			+oFgbKIg6NMLjwF5KkQVJoiYOFCu3Wl7Na99/UO2ci4=
 			</data>
 		</dict>
 		<key>Modules/ActiveLivenessSdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -129,14 +129,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LFfRK7PtSq1d+aFrTPz2AveHgYVLAuWfo0lulAPlpp8=
+			+oFgbKIg6NMLjwF5KkQVJoiYOFCu3Wl7Na99/UO2ci4=
 			</data>
 		</dict>
 		<key>Modules/ActiveLivenessSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			19UEeG3e9m+lJ3X760GcjfUDlQAJeGcbbAKMqEqFSGM=
+			gqnhXJqcWbilCXLRG6HISANKlU4hCNE30ECO7bPzKwQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
